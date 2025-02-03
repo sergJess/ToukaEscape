@@ -110,7 +110,6 @@ module.exports = {
                     'sass-loader',
                 ],
             },
-
             // --- IMG
             {
                 test: /\.(png|jpe?g|gif|svg|webp|ico)$/i,

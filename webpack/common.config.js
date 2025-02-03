@@ -66,7 +66,7 @@ const devServer = {
 module.exports = {
     devServer,
     plugins,
-    entry: path.join(__dirname, '..', 'src/app/index.ts'),
+    entry: path.join(__dirname, '..', 'src/index.tsx'),
     output: {
         path: BUILD_DIR,
         /**

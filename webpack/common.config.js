@@ -1,8 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
-const BUILD_DIR = path.resolve(__dirname, 'build');
-const PUBLIC_DIR = path.resolve(__dirname, 'public');
-const STATIC_DIR = path.resolve(__dirname, 'static');
+const BUILD_DIR = path.resolve(__dirname, '..', 'build');
+const PUBLIC_DIR = path.resolve(__dirname, '..', 'public');
+const STATIC_DIR = path.resolve(__dirname, '..', 'static');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
@@ -40,7 +40,7 @@ const devServer = {
     historyApiFallback: true, // Apply HTML5 History API if routes are used
     open: true,
     compress: true,
-    watchFiles: path.join(__dirname, 'src'),
+    watchFiles: path.join(__dirname, '..', 'src'),
     allowedHosts: 'all',
     hot: true, // Reload the page after changes saved (HotModuleReplacementPlugin)
     client: {
@@ -66,7 +66,7 @@ const devServer = {
 module.exports = {
     devServer,
     plugins,
-    entry: path.join(__dirname, 'src/app/', 'index.tsx'),
+    entry: path.join(__dirname, '..', 'src/app/index.ts'),
     output: {
         path: BUILD_DIR,
         /**

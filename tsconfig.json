@@ -29,7 +29,7 @@
         "noImplicitAny": true, // Raise error if the type "any" is specified somewhere
         "noImplicitThis": true, // Raise error on "this" expressions with an implied "any" type
         "noUnusedLocals": true, // Raise errors on unused local variables
-        "noEmit": true, // Do not emit compiler output files like JavaScript source code, source-maps or declarations
+        "noEmit": false, // Do not emit compiler output files like JavaScript source code, source-maps or declarations
         "jsx": "react",
         "plugins": [
             {

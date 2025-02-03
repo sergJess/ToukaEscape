@@ -12,6 +12,19 @@ module.exports = merge(common, {
     mode: 'development',
     target: 'web',
     plugins,
+    module: {
+        rules: [{
+            // --- SCSS or CSS
+            test: /\.(scss|css)$/i,
+            use: [
+                'style-loader',
+                'css-loader',
+                'resolve-url-loader',
+                'sass-loader',
+            ],
+        }, ],
+    },
+
     devtool: 'inline-source-map',
     output: {
         filename: '[name].[contenthash].js',

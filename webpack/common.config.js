@@ -99,17 +99,6 @@ module.exports = {
             },
             // --- HTML
             { test: /\.(html)$/, use: ['html-loader'] },
-            // --- SCSS or CSS
-            {
-                test: /\.(scss|css)$/i,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    'style-loader',
-                    'css-loader',
-                    'resolve-url-loader',
-                    'sass-loader',
-                ],
-            },
             // --- IMG
             {
                 test: /\.(png|jpe?g|gif|svg|webp|ico)$/i,

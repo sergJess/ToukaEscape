@@ -49,6 +49,18 @@ module.exports = merge(common, {
     output: {
         filename: '[fullhash].js',
     },
+    module: {
+        rules: [{
+            // --- SCSS or CSS
+            test: /\.(scss|css)$/i,
+            use: [
+                MiniCssExtractPlugin.loader,
+                'css-loader',
+                'resolve-url-loader',
+                'sass-loader',
+            ],
+        }, ],
+    },
     optimization: {
         usedExports: false,
         minimize: true, // Affects Terser Plugin

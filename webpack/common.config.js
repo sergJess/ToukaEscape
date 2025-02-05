@@ -3,38 +3,9 @@ const path = require('path');
 const BUILD_DIR = path.resolve(__dirname, '..', 'build');
 const PUBLIC_DIR = path.resolve(__dirname, '..', 'public');
 const STATIC_DIR = path.resolve(__dirname, '..', 'static');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
-
-const plugins = [
-    new FileManagerPlugin({
-        events: {
-            // Remove build dir
-            onStart: {
-                delete: [BUILD_DIR],
-            },
-            onEnd: {
-                // Copy static files
-                copy: [{
-                    source: STATIC_DIR,
-                    destination: BUILD_DIR,
-                }, ],
-            },
-        },
-    }),
-    new HtmlWebpackPlugin({
-        template: path.join(PUBLIC_DIR, 'index.html'),
-        filename: 'index.html',
-        title: 'ToukaEscape'
-    }),
-    new webpack.HotModuleReplacementPlugin(), // For page reloading
-];
-
-if (process.env.SERVE) {
-    plugins.push(new ReactRefreshWebpackPlugin());
-}
 
 const devServer = {
     historyApiFallback: true, // Apply HTML5 History API if routes are used
@@ -62,6 +33,33 @@ const devServer = {
         writeToDisk: true,
     },
 };
+const plugins = [
+    new FileManagerPlugin({
+        events: {
+            // Remove build dir
+            onStart: {
+                delete: [BUILD_DIR],
+            },
+            onEnd: {
+                // Copy static files
+                copy: [{
+                    source: STATIC_DIR,
+                    destination: BUILD_DIR,
+                }, ],
+            },
+        },
+    }),
+    new HtmlWebpackPlugin({
+        template: path.join(PUBLIC_DIR, 'index.html'),
+        filename: 'index.html',
+    }),
+    new webpack.HotModuleReplacementPlugin(), // For page reloading
+];
+
+if (process.env.SERVE) {
+    plugins.push(new ReactRefreshWebpackPlugin());
+}
+
 
 module.exports = {
     devServer,

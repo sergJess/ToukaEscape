@@ -9,10 +9,17 @@ module.exports = merge(common, {
             // --- SCSS or CSS
             test: /\.(scss|css)$/i,
             use: [
-                'style-loader',
-                'css-loader',
-                'resolve-url-loader',
-                'sass-loader',
+                { loader: 'style-loader' },
+                {
+                    loader: 'css-loader',
+                    options: {
+                        modules: true,
+                        sourceMap: true,
+                        esModule: true
+                    }
+                },
+                { loader: 'resolve-url-loader' },
+                { loader: 'sass-loader' },
             ],
         }, ],
     },

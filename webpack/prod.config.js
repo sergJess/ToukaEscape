@@ -54,10 +54,17 @@ module.exports = merge(common, {
             // --- SCSS or CSS
             test: /\.(scss|css)$/i,
             use: [
-                MiniCssExtractPlugin.loader,
-                'css-loader',
-                'resolve-url-loader',
-                'sass-loader',
+                { loader: MiniCssExtractPlugin.loader },
+                {
+                    loader: 'css-loader',
+                    options: {
+                        modules: true,
+                        sourceMap: false,
+                        esModule: true
+                    }
+                },
+                { loader: 'resolve-url-loader' },
+                { loader: 'sass-loader' },
             ],
         }, ],
     },

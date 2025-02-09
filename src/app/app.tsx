@@ -1,6 +1,8 @@
 import React from "react";
 import './style/main.scss';
-const App = () => {
-    return <button>Start the App</button>
+import { Header } from '../layout/header/header';
+export const App = () => {
+    return <div>
+        <Header></Header>
+    </div>
 }
-export default App

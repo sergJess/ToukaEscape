@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header } from '../layout/header/header';
 import { HomePage } from '../pages/home/home';
 import { Settings } from '../pages/settings/settings';
+import { Game } from '../pages/game/game';
 export const App = () => {
     return <BrowserRouter>
         <Header></Header>
@@ -11,6 +12,7 @@ export const App = () => {
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/settings" element={<Settings />} />
+                <Route path="/game" element={<Game />}></Route>
             </Routes>
         </div>
     </BrowserRouter>

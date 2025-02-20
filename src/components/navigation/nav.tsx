@@ -4,6 +4,7 @@ import * as styles from './style.module.scss';
 export const Nav = () => {
     return <nav className={styles.nav}>
         <NavLink to='/' end>Home</NavLink>
+        <NavLink to='/game' end>Game</NavLink>
         <NavLink to='/settings'>Settings</NavLink>
     </nav>
 }

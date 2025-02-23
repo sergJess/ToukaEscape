@@ -4,5 +4,4 @@ import { App } from './app/app';
 
 const domNode = document.getElementById('root')!;
 const root = createRoot(domNode);
-root.render(
-    <App></App>)
+root.render(<App></App>);

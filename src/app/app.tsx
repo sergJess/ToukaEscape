@@ -5,6 +5,7 @@ import { Header } from '../layout/header/header';
 import { HomePage } from '../pages/home/home';
 import { Settings } from '../pages/settings/settings';
 import { Game } from '../pages/game/game';
+import { Footer } from '../layout/footer/footer';
 export const App = () => {
     return <BrowserRouter>
         <Header></Header>
@@ -15,5 +16,6 @@ export const App = () => {
                 <Route path="/game" element={<Game />}></Route>
             </Routes>
         </div>
+        <Footer></Footer>
     </BrowserRouter>
 }

@@ -2,10 +2,8 @@ const webpack = require('webpack');
 const path = require('path');
 const BUILD_DIR = path.resolve(__dirname, '..', 'build');
 const PUBLIC_DIR = path.resolve(__dirname, '..', 'public');
-const STATIC_DIR = path.resolve(__dirname, '..', 'static');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
-const FileManagerPlugin = require('filemanager-webpack-plugin');
 
 const devServer = {
     historyApiFallback: true, // Apply HTML5 History API if routes are used
@@ -34,26 +32,10 @@ const devServer = {
     },
 };
 const plugins = [
-    new FileManagerPlugin({
-        events: {
-            // Remove build dir
-            onStart: {
-                delete: [BUILD_DIR],
-            },
-            onEnd: {
-                // Copy static files
-                copy: [{
-                    source: STATIC_DIR,
-                    destination: BUILD_DIR,
-                }, ],
-            },
-        },
-    }),
     new HtmlWebpackPlugin({
         template: path.join(PUBLIC_DIR, 'index.html'),
         filename: 'index.html',
     }),
-    new webpack.HotModuleReplacementPlugin(), // For page reloading
 ];
 
 if (process.env.SERVE) {
@@ -72,6 +54,7 @@ module.exports = {
          * And sets address in html imports
          */
         publicPath: '/',
+        assetModuleFilename: 'assets/[hash][ext][query]',
     },
     // Checking the maximum weight of the bundle is disabled
     performance: {
@@ -102,7 +85,7 @@ module.exports = {
                 test: /\.(png|jpe?g|gif|svg|webp|ico)$/i,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'static/[hash][ext]',
+                    filename: 'assets/images/[hash][ext][query]',
                 },
             },
             // --- FONTS
@@ -111,7 +94,7 @@ module.exports = {
                 exclude: /node_modules/,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'static/[hash][ext]'
+                    filename: 'assets/fonts/[hash][ext][query]'
                 },
             },
             {

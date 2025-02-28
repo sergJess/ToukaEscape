@@ -9,5 +9,7 @@ export const Nav = () => {
             isActive ? `${styles.link} ${styles.linkActive}` : `${styles.link}`} to='/game' end>Game</NavLink>
         <NavLink className={({ isActive }) =>
             isActive ? `${styles.link} ${styles.linkActive}` : `${styles.link}`} to='/settings'>Settings</NavLink>
+        <NavLink className={({ isActive }) =>
+            isActive ? `${styles.link} ${styles.linkActive}` : `${styles.link}`} to='/statistic'>Statistic</NavLink>
     </nav>
 }

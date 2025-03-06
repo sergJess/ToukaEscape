@@ -1,3 +1,23 @@
 .gamePage{
-    background-color: black;
+    min-height: 88vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: rgba(0, 27, 115, 0.8);
+}
+
+.startButton{
+    background-color: #6036cb;
+    border: 1rem solid #d1087d;
+    border-radius: 20%;
+    color: #8c3494;
+    font-size: 4.2rem;
+    line-height: 4.5rem;
+    padding: 2rem 1.8rem;
+    cursor: pointer;
+}
+
+.startButton:hover{
+    color: #d1087d;
 }

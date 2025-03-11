@@ -12,6 +12,7 @@
             "scripthost",
             "es6"
         ],
+        
         // This will include all packages from array only
         // node_modules/@types - is default path. Required, otherwise it will be ignored.
         "typeRoots": [

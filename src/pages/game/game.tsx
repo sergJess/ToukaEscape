@@ -9,5 +9,5 @@ export const Game = () => {
             button.classList.add(`${styles.startButtonClicked}`);
         }
     };
-    return <div className={styles.gamePage}><button ref={refToStartButton} onClick={clickOnButton} className={styles.startButton}>Start the GAME[X]</button></div>
+    return <div id="game-root" className={styles.gamePage}><button ref={refToStartButton} onClick={clickOnButton} className={styles.startButton}>Start the GAME[X]</button></div>
 }

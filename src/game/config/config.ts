@@ -1,6 +1,7 @@
 import 'phaser';
 import { Scene } from 'phaser';
 import toukaMotoPoster from '../../assets/character/ToukaYoko00.jpeg';
+import { StartScene } from ''
 export const config: Phaser.Types.Core.GameConfig = {
     type: Phaser.AUTO,
     width: 856,
@@ -26,10 +27,8 @@ export const config: Phaser.Types.Core.GameConfig = {
             },
         },
     },
-    scene: {
-        preload: () => { },
+    scene: []
 
-    }
 }
 class Game {
     game: Phaser.Game;
@@ -40,14 +39,17 @@ class Game {
     }
 
 }
-export class Preloader extends Scene {
-    constructor() {
-        super('Preloader');
-    }
-    preload() {
-        this.load.image('poster', `${toukaMotoPoster}`);
-    }
-}
+// export class Preloader extends Scene {
+//     game: Phaser.Game;
+//     constructor(config: Phaser.Types.Core.GameConfig) {
+//         super('Preloader');
+//         this.game = new Phaser.Game({ ...config, scene: { preload: this.preload } });
+
+//     }
+//     preload() {
+//         this.load.image('poster', `${toukaMotoPoster}`);
+//     }
+// }
 export const game = new Game(config);
 
 

@@ -7,17 +7,12 @@ export default function Home() {
     <div className={styles.page}>
       <main className={styles.main}>
         <div className={styles.intro}>
-          <h1>Touka Escape</h1>
+          <h1 className={styles.title}>Touka Escape</h1>
           <div>
-            <Image
-              alt="Touka Poster"
-              src={ToukaImage}
-            />
+            <Image alt="Touka Poster" src={ToukaImage} priority />
           </div>
         </div>
-        <div className={styles.ctas}>
-          2026
-        </div>
+        <div className={styles.ctas}>2026</div>
       </main>
     </div>
   );

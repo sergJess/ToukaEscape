@@ -8,8 +8,16 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.intro}>
           <h1 className={styles.title}>Touka Escape</h1>
-          <div>
-            <Image alt="Touka Poster" src={ToukaImage} priority />
+          <p className={styles.sloganText}>
+            Stay alive while the whole world crumbling!!
+          </p>
+          <div className={styles.posterContainer}>
+            <Image
+              className={styles.posterImage}
+              alt="Touka Poster"
+              src={ToukaImage}
+              priority
+            />
           </div>
         </div>
         <div className={styles.ctas}>2026</div>

@@ -3,11 +3,18 @@ type ButtonProps = {
   text?: string;
   onClick?: () => void;
   type?: "button" | "submit" | "reset";
+  className?: string;
 };
-export function Button(props: ButtonProps) {
+export function Button({
+  text,
+  onClick,
+  type = "button",
+  className = "",
+}: ButtonProps) {
+  const combinedClasses = `${styles.start} ${className}`.trim();
   return (
-    <button onClick={props.onClick} type={props.type || "button"}>
-      {props.text}
+    <button onClick={onClick} type={type} className={combinedClasses}>
+      {text}
     </button>
   );
 }

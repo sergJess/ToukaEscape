@@ -11,7 +11,7 @@ export function Button({
   type = "button",
   className = "",
 }: ButtonProps) {
-  const combinedClasses = `${styles.start} ${className}`.trim();
+  const combinedClasses = `${styles.button} ${className}`.trim();
   return (
     <button onClick={onClick} type={type} className={combinedClasses}>
       {text}

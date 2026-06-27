@@ -9,3 +9,14 @@
   min-height: 56vh;
   min-height: 56dvh;
 }
+
+.button__start {
+  width: 150px;
+  height: 55px;
+  border: 3px solid #3b7cbc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 23px;
+  background-color: rgb(154, 11, 179);
+  color: #d150a0;
+}

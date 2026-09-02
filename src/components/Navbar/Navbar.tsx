@@ -3,13 +3,19 @@ import styles from "./navbar.module.css";
 export function Navbar() {
   const clickOnLink = () => {};
   return (
-    <nav className={styles.navbar}>
-      <Link href="/" className={styles.navbar__link}>
-        Home
-      </Link>
-      <Link href="/game" className={styles.navbar__link}>
-        Game
-      </Link>
+    <nav>
+      <ul className={styles.list}>
+        <li className={styles.list__item}>
+          <Link href="/" className={styles.navbar__link}>
+            Home
+          </Link>
+        </li>
+        <li className={styles.list__item}>
+          <Link href="/game" className={styles.navbar__link}>
+            Game
+          </Link>
+        </li>
+      </ul>
     </nav>
   );
 }

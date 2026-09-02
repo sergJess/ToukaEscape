@@ -1,7 +1,11 @@
-.navbar {
+.list {
   display: flex;
   gap: 20px;
   padding: 10px;
+}
+
+.list__item {
+  list-style: none;
 }
 
 .navbar__link {

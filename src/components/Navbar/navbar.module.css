@@ -4,11 +4,15 @@
   padding: 10px;
 }
 
-.list__item {
+.listItem {
   list-style: none;
 }
 
-.navbar__link {
+.navbarLink {
   color: #862bbb;
   font-size: 2.4rem;
+}
+
+.navbarLinkActive {
+  color: #e8056b;
 }

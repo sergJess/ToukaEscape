@@ -1,20 +1,29 @@
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import styles from "./navbar.module.css";
+const NAV_LINKS = [
+  { name: "Home", href: "/" },
+  { name: "Game", href: "/game" },
+];
 export function Navbar() {
-  const clickOnLink = () => {};
+  const pathname = usePathname();
   return (
     <nav>
       <ul className={styles.list}>
-        <li className={styles.list__item}>
-          <Link href="/" className={styles.navbar__link}>
-            Home
-          </Link>
-        </li>
-        <li className={styles.list__item}>
-          <Link href="/game" className={styles.navbar__link}>
-            Game
-          </Link>
-        </li>
+        {NAV_LINKS.map((link) => {
+          const isActive = pathname === link.href;
+          return (
+            <li key={link.href} className={styles.listItem}>
+              <Link
+                href={link.href}
+                className={`${styles.navbarLink} ${isActive ? styles.navbarLinkActive : ""}`}
+              >
+                {link.name}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );

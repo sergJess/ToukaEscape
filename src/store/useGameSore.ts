@@ -5,6 +5,7 @@ type GameStore = {
   status: GameState;
   score: number;
   startGame: () => void;
+  changeGameStatus: (status: GameState) => void;
   addPoints: (points: number) => void;
   resetGame: () => void;
 };
@@ -12,6 +13,7 @@ export const useGameStore = create<GameStore>((set) => ({
   status: "menu",
   score: 0,
   startGame: () => set({ status: "playing" }),
+  changeGameStatus: (status) => set({ status }),
   addPoints: (points) => set((state) => ({ score: state.score + points })),
   resetGame: () => set({ status: "menu", score: 0 }),
 }));
